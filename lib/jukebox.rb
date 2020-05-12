@@ -44,7 +44,7 @@ def play(arr)
         else
             puts "Invalid input, please try again"
             return
-        end 
+        end
     end
 end
 
