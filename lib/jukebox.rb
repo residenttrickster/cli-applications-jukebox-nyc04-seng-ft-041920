@@ -19,9 +19,9 @@ def help
     puts "- exit : exits this program"
 end
 
-def list(arr)
-    arr.each_with_index do |val, index|
-        puts "#{index + 1}. #{val}"
+def list(array)
+    array.each_with_index do |value, index|
+        puts "#{index + 1}. #{value}"
     end
 end
 
@@ -29,17 +29,17 @@ def exit_jukebox
     puts "Goodbye"
 end
 
-def play(arr)
+def play(array)
     puts "Please enter a song name or number:"
-    song_input = gets.strip
+    song = gets.strip
 
-    arr.each do |item|
-        if item == song_input
-            puts "Playing #{song_input}"
+    array.each do |item|
+        if item == song
+            puts "Playing #{song}"
             return
         end
-        if song_input.to_i > 0 && song_input.to_i < arr.length
-            puts "Playing #{arr[song_input.to_i - 1]}"
+        if song.to_i > 0 && song.to_i < arr.length
+            puts "Playing #{array[song_input.to_i - 1]}"
             return
         else
             puts "Invalid input, please try again"
@@ -48,7 +48,7 @@ def play(arr)
     end
 end
 
-def run(arr)
+def run(array)
     puts "Please enter a command:"
     input = gets.strip
 
@@ -57,10 +57,10 @@ def run(arr)
             help
         end
         if input == "list"
-            list(arr)
+            list(array)
         end
         if input == "play"
-            play(arr)
+            play(array)
         end
         puts "Please enter a command:"
         input = gets.strip
