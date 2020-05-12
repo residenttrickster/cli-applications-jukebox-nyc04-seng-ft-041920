@@ -38,8 +38,8 @@ def play(array)
             puts "Playing #{song}"
             return
         end
-        if song.to_i > 0 && song.to_i < arr.length
-            puts "Playing #{array[song_input.to_i - 1]}"
+        if song.to_i > 0 && song.to_i < array.length
+            puts "Playing #{array[song.to_i - 1]}"
             return
         else
             puts "Invalid input, please try again"
